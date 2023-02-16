@@ -25,11 +25,15 @@ class Boat {
     this.speed = 0.05;
     this.width = 300;
     this.height = 300;
-    setTimeout(() => {
+    //Utilize a função  'setTimeout', pois esta função executa o código dentro dela após um certo intervalo de tempo.
+    ???(() => {
       Matter.World.remove(world, boats[index].body);
       boats.splice(index, 1);
-    }, 2000);
+      //Defina o tempo para '2000' milisegudos, pois isso corresponde a 2 segundos
+    }, ???);
   }
+
+ 
 
   display() {
     var angle = this.body.angle;
