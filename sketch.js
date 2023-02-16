@@ -24,7 +24,10 @@ function preload() {
   brokenBoatSpritedata = loadJSON("assets/boat/broken_boat.json");
   brokenBoatSpritesheet = loadImage("assets/boat/broken_boat.png");
  
-  cannonExplosion = loadSound("./assets/cannon_explosion.mp3");
+  //Crie a variável 'cannonExplosion'
+  //Utilize o código 'loadSound'
+  //Carregue o som 'cannon_explosion.mp3'
+  //???
 }
 
 function setup() {
@@ -65,7 +68,8 @@ function draw() {
     showCannonBalls(balls[i], i);
     for (var j = 0; j < boats.length; j++) {
       if (balls[i] !== undefined && boats[j] !== undefined) {
-        var collision = Matter.SAT.collides(balls[i].body, boats[j].body);
+        //Utilize a função em matter.js ajuda a detectar a colisão 
+        var collision = ???(balls[i].body, boats[j].body);
         if (collision.collided) {
           boats[j].remove(j);
 
@@ -84,7 +88,7 @@ function draw() {
 }
 
 
-//creating the cannon ball on key press
+//criando a bola se a tecla para baixo for pressionada
 function keyPressed() {
   if (keyCode === DOWN_ARROW) {
     var cannonBall = new CannonBall(cannon.x, cannon.y);
@@ -94,7 +98,7 @@ function keyPressed() {
   }
 }
 
-// function to show the ball.
+// função para mostrar a bola
 function showCannonBalls(ball, index) {
   ball.display();
   if (ball.body.position.x >= width || ball.body.position.y >= height - 50) {
@@ -104,7 +108,7 @@ function showCannonBalls(ball, index) {
 }
 
 
-//function to show the boat
+//função para mostrar o barco
 function showBoats() {
   if (boats.length > 0) {
     if (
@@ -147,7 +151,7 @@ function showBoats() {
 }
 
 
-//releasing the cannonball on key release
+//libertando a bola de canhão no lançamento 
 function keyReleased() {
   if (keyCode === DOWN_ARROW) {
     cannonExplosion.play();
@@ -161,8 +165,9 @@ function keyReleased() {
 function gameOver() {
   swal(
     {
-      title: `Game Over!!!`,
-      confirmButtonText: "Play Again"
+      //Defina um título e um botão para a tela de notificação que aparecerá quando o jogador perder
+      title: `???`,
+      confirmButtonText: "???"
     },
     function(isConfirm) {
       if (isConfirm) {
