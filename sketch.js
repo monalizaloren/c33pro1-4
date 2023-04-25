@@ -68,12 +68,12 @@ function draw() {
     showCannonBalls(balls[i], i);
     for (var j = 0; j < boats.length; j++) {
       if (balls[i] !== undefined && boats[j] !== undefined) {
-        //Utilize a função em matter.js ajuda a detectar a colisão 
+        //Utilize a função em "Matter.SAT.collides()" para detectar a colisão
         var collision = ???(balls[i].body, boats[j].body);
         if (collision.collided) {
           boats[j].remove(j);
-
-          Matter.World.remove(world, balls[i].body);
+          //Utilize 'Matter.World.remove' para remover o barco do mundo
+         ???(world, balls[i].body);
           balls.splice(i, 1);
           i--;
           
@@ -163,6 +163,7 @@ function keyReleased() {
 
 
 function gameOver() {
+  //Utilize uma função que se chama 'swal', pois ela cria uma notificação no jogo
   swal(
     {
       //Defina um título e um botão para a tela de notificação que aparecerá quando o jogador perder
@@ -171,7 +172,7 @@ function gameOver() {
     },
     function(isConfirm) {
       if (isConfirm) {
-        location.reload();
+        //Utilize a função 'location.reload()' para reiniciar a página
       }
     }
   );
